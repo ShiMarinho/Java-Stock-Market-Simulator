@@ -15,15 +15,35 @@ public class Commodity extends Company {
     /*
      * Constructor
      */
-    public Commodity(int compId, int share, double price) {
-        this.compId = compId;
-        this.price = price;
-        this.share = share;
+    public Commodity(CommodityBuilder builder) {
+        this.compId = builder.compId;
+        this.price = builder.price;
+        this.share = builder.share;
 
     }
 
     @Override
     public String toString() {
         return "Commodity{" + "id=" + compId + ", share=" + share + ", price=" + price + '}';
+    }
+    
+    public static class CommodityBuilder {
+
+        protected int compId;
+        protected double price;
+        protected int share;
+       
+        
+        public CommodityBuilder(int compId, int share, double price){
+            this.compId = compId;
+            this.share = share;
+            this.price = price;
+          
+            
+        }
+        public Commodity build(){
+            return new Commodity(this);
+        }
+
     }
 }

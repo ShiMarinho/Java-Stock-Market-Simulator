@@ -22,7 +22,7 @@ public class BankFactory implements AbstractFactory {
 
     @Override
     public Company createCompany() {
-        return new Bank(compId, share, price);
+        return new Bank.BankBuilder(compId, share, price).build();
     }
 
 }

@@ -24,7 +24,7 @@ public class FoodBeverageFactory implements AbstractFactory {
 
     @Override
     public Company createCompany() {
-        return new FoodBeverage(compId, share, price);
+        return new FoodBeverage.FoodBeverageBuilder(compId, share, price).build();
     }
 
     

@@ -24,7 +24,7 @@ public class CommodityFactory implements AbstractFactory {
 
     @Override
     public Company createCompany() {
-        return new Commodity(compId, share, price);
+        return new Commodity.CommodityBuilder(compId, share, price).build();
     }
 
 }
