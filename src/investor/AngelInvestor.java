@@ -23,7 +23,7 @@ public class AngelInvestor extends Investor {
    
     @Override
     public String toString() {
-        return "Type: Angel Investor, id: " +  getInvId() + ", Name: " +  getBugdet();
+        return "Type: Angel Investor, id: " +  getInvId() + ", Budget: " +  getBugdet();
 
     }
     public static class AngelInvestorBuilder {

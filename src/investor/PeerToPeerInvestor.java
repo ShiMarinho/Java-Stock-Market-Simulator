@@ -23,7 +23,7 @@ public class PeerToPeerInvestor extends Investor {
    
     @Override
     public String toString() {
-        return "Type: Peer to Peer Investor, id: " +  getInvId() + ", Name: " +  getBugdet();
+        return "Type: Peer to Peer Investor, id: " +  getInvId() + ", Budget: " +  getBugdet();
 
     }
     public static class PeerToPeerInvestorBuilder {

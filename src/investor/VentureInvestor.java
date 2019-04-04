@@ -23,7 +23,7 @@ public class VentureInvestor extends Investor {
    
     @Override
     public String toString() {
-        return "Type: Venture Investor, id: " +  getInvId() + ", Name: " +  getBugdet();
+        return "Type: Venture Investor, id: " +  getInvId() + ", Budget: " +  getBugdet();
 
     }
     public static class VentureInvestorBuilder {
