@@ -11,10 +11,12 @@ package investor;
  */
 public abstract class Investor {
 
+    /*
+    thread 
+     */
     protected int invId;
     protected double bugdet;
     protected String type;
-    //implement thread
 
     public int getInvId() {
         return invId;
@@ -44,5 +46,7 @@ public abstract class Investor {
     public String toString() {
         return "Investor{" + "invId=" + invId + ", bugdet=" + bugdet + ", type=" + type + '}';
     }
+
+   
 
 }

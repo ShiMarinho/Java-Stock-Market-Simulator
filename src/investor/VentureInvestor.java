@@ -14,9 +14,9 @@ public class VentureInvestor extends Investor {
     /*
     * Constructor 
      */
-    public VentureInvestor(int invId, double bugdet) {
-        this.invId = invId;
-        this.bugdet = bugdet;
+    public VentureInvestor(VentureInvestorBuilder builder) {
+        this.invId = builder.invId;
+        this.bugdet = builder.bugdet;
 
     }
 
@@ -24,6 +24,23 @@ public class VentureInvestor extends Investor {
     @Override
     public String toString() {
         return "Type: Venture Investor, id: " +  getInvId() + ", Name: " +  getBugdet();
+
+    }
+    public static class VentureInvestorBuilder {
+
+        protected int invId;
+        protected double bugdet;
+       
+        
+        public VentureInvestorBuilder(int invId, double budget){
+            this.invId = invId;
+            this.bugdet = bugdet;
+          
+            
+        }
+        public VentureInvestor build(){
+            return new VentureInvestor(this);
+        }
 
     }
 }

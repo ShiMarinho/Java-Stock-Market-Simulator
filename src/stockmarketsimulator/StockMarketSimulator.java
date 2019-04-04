@@ -47,15 +47,15 @@ public class StockMarketSimulator {
          */
         System.out.println("Investors \n");
 
-        Investor personal = Factory.getInvestor(1, 100, "personal");
+        Investor personal = Factory.createInvestor(1, 100, "personal");
         System.out.println(personal);
-        Investor angel = Factory.getInvestor(1, 100, "angel");
+        Investor angel = Factory.createInvestor(1, 100, "angel");
         System.out.println(angel);
-        Investor peer = Factory.getInvestor(1, 100, "peer-to-peer");
+        Investor peer = Factory.createInvestor(1, 100, "peer-to-peer");
         System.out.println(peer);
-        Investor venture = Factory.getInvestor(1, 100, "venture");
+        Investor venture = Factory.createInvestor(1, 100, "venture");
         System.out.println(venture);
-        Investor bankInv = Factory.getInvestor(1, 100, "bank investor");
+        Investor bankInv = Factory.createInvestor(1, 100, "bank investor");
         System.out.println(bankInv);
         
         /*
