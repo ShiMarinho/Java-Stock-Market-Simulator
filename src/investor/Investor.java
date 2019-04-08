@@ -10,29 +10,36 @@ package investor;
  * @author ms
  */
 public abstract class Investor {
-
-    protected int invId;
+	protected int invId;
     protected double bugdet;
     protected String type;
     //implement thread
 
-    public int getInvId() {
-        return invId;
-    }
-
-    public void setInvId(int invId) {
-        this.invId = invId;
-    }
 
     public double getBugdet() {
         return bugdet;
     }
 
-    public void setBugdet(double bugdet) {
+    public void setBugdet(int invId, double bugdet) {
+    	this.invId = invId;
         this.bugdet = bugdet;
     }
 
-    public String getType() {
+    
+    
+    public int getInvId() {
+		return invId;
+	}
+
+	public void setInvId(int invId) {
+		this.invId = invId;
+	}
+
+	public void setBugdet(double bugdet) {
+		this.bugdet = bugdet;
+	}
+
+	public String getType() {
         return type;
     }
 
@@ -42,7 +49,9 @@ public abstract class Investor {
 
     @Override
     public String toString() {
-        return "Investor{" + "invId=" + invId + ", bugdet=" + bugdet + ", type=" + type + '}';
+        return "\n Investor"        		
+        		+ " \n Bugdet: " + bugdet 
+        		+ "\n Type: " + type ;
     }
 
 }

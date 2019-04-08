@@ -22,7 +22,11 @@ public class TechFactory implements AbstractFactory {
 
     }
 
-    @Override
+    public TechFactory() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
     public Company createCompany() {
         return new Tech(compId, share, price);
     }

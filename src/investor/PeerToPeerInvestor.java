@@ -15,7 +15,7 @@ public class PeerToPeerInvestor extends Investor {
     * Constructor 
      */
     public PeerToPeerInvestor(int invId, double bugdet) {
-        this.invId = invId;
+    	this.invId = invId;
         this.bugdet = bugdet;
 
     }
@@ -23,7 +23,10 @@ public class PeerToPeerInvestor extends Investor {
    
     @Override
     public String toString() {
-        return "Type: Peer to Peer Investor, id: " +  getInvId() + ", Name: " +  getBugdet();
+        return 
+        		"\n ID: " + getInvId( ) +
+        		"\n Budget: " +  getBugdet() + 
+        		"\n Type: Peer to Peer Investor ";
 
     }
 }

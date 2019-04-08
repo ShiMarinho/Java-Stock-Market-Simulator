@@ -18,19 +18,19 @@ public class Factory {
     /*
     * to make the method accessible in the main static
      */
-    public static Investor getInvestor(int InvId, double budget, String type) {
+    public static Investor getInvestor(int invId, double budget, String type) {
 
         switch (type) {
             case "personal":
-                return new PersonalInvestor(InvId, budget);
+                return new PersonalInvestor(invId, budget);
             case "angel":
-                return new AngelInvestor(InvId, budget);
+                return new AngelInvestor (invId, budget);
             case "peer-to-peer":
-                return new PeerToPeerInvestor(InvId, budget);
+                return new PeerToPeerInvestor(invId, budget);
             case "venture":
-                return new VentureInvestor(InvId, budget);
+                return new VentureInvestor(invId, budget);
             case "bank investor":
-                return new BankInvestor(InvId, budget);
+                return new BankInvestor(invId, budget);
             default:
                 return null;
 

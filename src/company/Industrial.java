@@ -23,7 +23,10 @@ public class Industrial extends Company {
 
     @Override
     public String toString() {
-        return "Industrial{" + "id=" + compId + ", share=" + share + ", price=" + price + '}';
+        return "\n Industrial " + 
+        		"\n ID: " + compId + 
+        		"\n Share: " + share + 
+        		"\n Price: " + price ;
     }
 
 }

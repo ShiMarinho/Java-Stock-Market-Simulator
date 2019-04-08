@@ -23,6 +23,9 @@ public class FoodBeverage extends Company{
 
     @Override
     public String toString() {
-        return "Food and Beverage{" + "id=" + compId + ", share=" + share + ", price=" + price + '}';
+        return "\n Food and Beverage " + 
+        		"\n ID: " + compId + 
+        		"\n Share: " + share + 
+        		"\n Price: " + price ;
     }
 }

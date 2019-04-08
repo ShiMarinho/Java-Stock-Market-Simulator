@@ -15,15 +15,20 @@ public class AngelInvestor extends Investor {
     * Constructor 
      */
     public AngelInvestor(int invId, double bugdet) {
-        this.invId = invId;
-        this.bugdet = bugdet;
+    	this.invId = invId;
+         this.bugdet = bugdet;
 
     }
+    
 
    
     @Override
     public String toString() {
-        return "Type: Angel Investor, id: " +  getInvId() + ", Name: " +  getBugdet();
-
+        return 
+        		"\n ID: " + getInvId( ) +
+        		"\n Budget: " +  getBugdet() +
+        		"\n Type: Angel Investor ";
     }
+    
+   
 }
