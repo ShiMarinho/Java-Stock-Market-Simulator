@@ -17,17 +17,17 @@ public abstract class Investor {
     thread 
      */
     
-    protected double bugdet;
+    protected double budget;
     protected String type;
 
 
-    public double getBugdet() {
-        return bugdet;
+    public double getBudget() {
+        return budget;
     }
 
     public void setBugdet(int invId, double bugdet) {
     	this.invId = invId;
-        this.bugdet = bugdet;
+        this.budget = bugdet;
     }
 
     
@@ -40,8 +40,8 @@ public abstract class Investor {
 		this.invId = invId;
 	}
 
-	public void setBugdet(double bugdet) {
-		this.bugdet = bugdet;
+	public void setBudget(double bugdet) {
+		this.budget = bugdet;
 	}
 
 	public String getType() {
@@ -55,7 +55,7 @@ public abstract class Investor {
     @Override
     public String toString() {
         return "\n Investor"        		
-        		+ " \n Bugdet: " + bugdet 
+        		+ " \n Bugdet: " + budget 
         		+ "\n Type: " + type ;
     }
 

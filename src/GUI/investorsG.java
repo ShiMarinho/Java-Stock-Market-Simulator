@@ -30,7 +30,7 @@ public class investorsG extends JFrame{
         for(int i=0; i<sU.investors.size(); i++) {     	
         	
         	rowData[0] = sU.investors.get(i).getInvId();
-        	rowData[1] = sU.investors.get(i).getBugdet();
+        	rowData[1] = sU.investors.get(i).getBudget();
         	rowData[2] = sU.investors.get(i).getClass().getSimpleName();
         	
         	dtm.addRow(rowData);

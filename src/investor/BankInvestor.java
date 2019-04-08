@@ -17,12 +17,12 @@ public class BankInvestor extends Investor {
 
     public BankInvestor(int invId, double bugdet) {
     	this.invId = invId;
-          this.bugdet = bugdet;
+          this.budget = bugdet;
     }
 
     public BankInvestor(BankInvestorBuilder builder) {
         this.invId = builder.invId;
-        this.bugdet = builder.bugdet;
+        this.budget = builder.bugdet;
 
 
     }
@@ -33,7 +33,7 @@ public class BankInvestor extends Investor {
 
         return   
         		"\n ID: " + getInvId( ) +
-        		"\n Budget: " +  getBugdet() +
+        		"\n Budget: " +  getBudget() +
         		"\n Type: Bank Investor ";
 
 
@@ -47,7 +47,7 @@ public class BankInvestor extends Investor {
         
         public BankInvestorBuilder(int invId, double budget){
             this.invId = invId;
-            this.bugdet = bugdet;
+            this.bugdet =  budget;
           
             
         }

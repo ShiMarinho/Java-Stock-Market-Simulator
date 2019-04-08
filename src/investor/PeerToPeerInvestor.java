@@ -17,12 +17,12 @@ public class PeerToPeerInvestor extends Investor {
 
     public PeerToPeerInvestor(int invId, double bugdet) {
     	this.invId = invId;
-        this.bugdet = bugdet;
+        this.budget = bugdet;
     }
 
     public PeerToPeerInvestor(PeerToPeerInvestorBuilder builder) {
         this.invId = builder.invId;
-        this.bugdet = builder.bugdet;
+        this.budget = builder.bugdet;
 
 
     }
@@ -33,7 +33,7 @@ public class PeerToPeerInvestor extends Investor {
 
         return 
         		"\n ID: " + getInvId( ) +
-        		"\n Budget: " +  getBugdet() + 
+        		"\n Budget: " +  getBudget() + 
         		"\n Type: Peer to Peer Investor ";
 
         
@@ -47,7 +47,7 @@ public class PeerToPeerInvestor extends Investor {
         
         public PeerToPeerInvestorBuilder(int invId, double budget){
             this.invId = invId;
-            this.bugdet = bugdet;
+            this.bugdet = budget;
           
             
         }

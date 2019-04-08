@@ -17,12 +17,12 @@ public class AngelInvestor extends Investor {
 
     public AngelInvestor(int invId, double bugdet) {
     	this.invId = invId;
-         this.bugdet = bugdet;
+         this.budget = bugdet;
     }    
 
     public AngelInvestor(AngelInvestorBuilder builder) {
         this.invId = builder.invId;
-        this.bugdet = builder.bugdet;
+        this.budget = builder.budget;
 
 
     }
@@ -34,7 +34,7 @@ public class AngelInvestor extends Investor {
 
         return 
         		"\n ID: " + getInvId( ) +
-        		"\n Budget: " +  getBugdet() +
+        		"\n Budget: " +  getBudget() +
         		"\n Type: Angel Investor ";
 
       
@@ -43,12 +43,12 @@ public class AngelInvestor extends Investor {
     public static class AngelInvestorBuilder {
 
         protected int invId;
-        protected double bugdet;
+        protected double budget;
        
         
         public AngelInvestorBuilder(int invId, double budget){
             this.invId = invId;
-            this.bugdet = bugdet;
+            this.budget = budget;
           
             
         }

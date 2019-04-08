@@ -1,5 +1,6 @@
 package stockmarketsimulator;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
@@ -11,8 +12,12 @@ import company.CompanyFactory;
 import company.FoodBeverageFactory;
 import company.IndustrialFactory;
 import company.TechFactory;
+import investor.AngelInvestor;
+import investor.AngelInvestor.AngelInvestorBuilder;
 import investor.Factory;
 import investor.Investor;
+import investor.PersonalInvestor;
+import investor.PersonalInvestor.PersonalInvestorBuilder;
 
 public class SetUp {
 	
@@ -43,11 +48,12 @@ public class SetUp {
 
 	    String[] types = new String[] {"personal", "angel", "peer-to-peer",  "venture", "bank investor"};	    
 		    
-	    for(int i=0; i<objtMax; i++) {
-	    	int budget = ThreadLocalRandom.current().nextInt(bugetMin, BudgetMax +1);
+	    for(int i=0; i<objtMax; i++) {	    	
 	    	String type = types[r.nextInt(types.length)];	    	
-	    	int id = i+1;	    		    	
-	    	investors.add(Factory.getInvestor(id, budget, type));
+	    	int id = i+1;
+	    	int finalBudget = ThreadLocalRandom.current().nextInt(bugetMin, BudgetMax +1);
+	    	investors.add(Factory.createInvestor(id, finalBudget, type));	    	
+//	    	investors.add(Factory.createInvestor(id, budget, type));
 	    }	    
 	}
     
@@ -58,7 +64,7 @@ public class SetUp {
 	     */
 		
 		for(int i=0; i<objtMax; i++) {
-//			int shares = minShares + r.nextInt(maxShares);
+			
 			int shares = ThreadLocalRandom.current().nextInt(minShares, maxShares +1);
 			int price = ThreadLocalRandom.current().nextInt(minPrice, maxPrice +1);
 			int id = i+1;

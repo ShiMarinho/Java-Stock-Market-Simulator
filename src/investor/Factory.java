@@ -24,34 +24,23 @@ public class Factory {
 
         switch (type) {
             case "personal":
-
-                return new PersonalInvestor(InvId, budget);
-
-//                return new PersonalInvestor.PersonalInvestorBuilder(InvId, budget).build();
+                return new PersonalInvestor.PersonalInvestorBuilder(InvId, budget).build();
 
             case "angel":
 
-                return new AngelInvestor (InvId, budget);
+                return new AngelInvestor.AngelInvestorBuilder(InvId, budget).build();
 
-//                return new AngelInvestor.AngelInvestorBuilder(InvId, budget).build();
+            case "peer-to-peer":               
 
-            case "peer-to-peer":
+                return new PeerToPeerInvestor.PeerToPeerInvestorBuilder(InvId, budget).build();
 
-                return new PeerToPeerInvestor(InvId, budget);
+            case "venture":               
 
-//                return new PeerToPeerInvestor.PeerToPeerInvestorBuilder(InvId, budget).build();
+                return new VentureInvestor.VentureInvestorBuilder(InvId, budget).build();
 
-            case "venture":
+            case "bank investor":                
 
-                return new VentureInvestor(InvId, budget);
-
-//                return new VentureInvestor.VentureInvestorBuilder(InvId, budget).build();
-
-            case "bank investor":
-
-                return new BankInvestor(InvId, budget);
-
-//                return new BankInvestor.BankInvestorBuilder(InvId, budget).build();
+                return new BankInvestor.BankInvestorBuilder(InvId, budget).build();
 
             default:
                 return null;
