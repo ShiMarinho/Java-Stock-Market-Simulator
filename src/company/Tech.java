@@ -14,10 +14,10 @@ public class Tech extends Company {
     /*
      * Constructor
      */
-    public Tech(int compId, int share, double price) {
-        this.compId = compId;
-        this.price = price;
-        this.share = share;
+    public Tech(TechBuilder builder) {
+        this.compId = builder.compId;
+        this.price = builder.price;
+        this.share = builder.share;
 
     }
 
@@ -29,4 +29,23 @@ public class Tech extends Company {
         		"\n Price: " + price ;
     }
     
+    public static class TechBuilder {
+
+        protected int compId;
+        protected double price;
+        protected int share;
+       
+        
+        public TechBuilder(int compId, int share, double price){
+            this.compId = compId;
+            this.share = share;
+            this.price = price;
+          
+            
+        }
+        public Tech build(){
+            return new Tech(this);
+        }
+
+    }
 }

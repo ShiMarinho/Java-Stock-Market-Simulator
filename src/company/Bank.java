@@ -13,12 +13,19 @@ public class Bank extends Company {
     /*
      * Constructor
      */
+
     public Bank(int compId, int share, double price) {
         this.compId = compId;
         this.share = share;
         this.price = price;
         
-  
+    }
+
+    public Bank(BankBuilder builder) {
+        this.compId = builder.compId;
+        this.price = builder.price;
+        this.share = builder.share;
+
 
     }
   
@@ -29,5 +36,25 @@ public class Bank extends Company {
         		"\n ID: " + compId + 
         		"\n Share: " + share + 
         		"\n Price: " + price ;
+    }
+    
+    public static class BankBuilder {
+
+        protected int compId;
+        protected double price;
+        protected int share;
+       
+        
+        public BankBuilder(int compId, int share, double price){
+            this.compId = compId;
+            this.share = share;
+            this.price = price;
+          
+            
+        }
+        public Bank build(){
+            return new Bank(this);
+        }
+
     }
 }

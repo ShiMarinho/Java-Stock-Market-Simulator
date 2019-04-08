@@ -24,7 +24,7 @@ public class IndustrialFactory implements AbstractFactory {
 
     @Override
     public Company createCompany() {
-        return new Industrial(compId, share, price);
+        return new Industrial.IndustrialBuilder(compId, share, price).build();
     }
 
     

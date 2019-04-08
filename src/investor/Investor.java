@@ -10,10 +10,15 @@ package investor;
  * @author ms
  */
 public abstract class Investor {
+
 	protected int invId;
+
+    /*
+    thread 
+     */
+    
     protected double bugdet;
     protected String type;
-    //implement thread
 
 
     public double getBugdet() {
@@ -53,5 +58,7 @@ public abstract class Investor {
         		+ " \n Bugdet: " + bugdet 
         		+ "\n Type: " + type ;
     }
+
+   
 
 }

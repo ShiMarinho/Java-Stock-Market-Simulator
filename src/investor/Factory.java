@@ -18,24 +18,47 @@ public class Factory {
     /*
     * to make the method accessible in the main static
      */
-    public static Investor getInvestor(int invId, double budget, String type) {
+
+    public static Investor createInvestor(int InvId, double budget, String type) {
+
 
         switch (type) {
             case "personal":
-                return new PersonalInvestor(invId, budget);
+
+                return new PersonalInvestor(InvId, budget);
+
+//                return new PersonalInvestor.PersonalInvestorBuilder(InvId, budget).build();
+
             case "angel":
-                return new AngelInvestor (invId, budget);
+
+                return new AngelInvestor (InvId, budget);
+
+//                return new AngelInvestor.AngelInvestorBuilder(InvId, budget).build();
+
             case "peer-to-peer":
-                return new PeerToPeerInvestor(invId, budget);
+
+                return new PeerToPeerInvestor(InvId, budget);
+
+//                return new PeerToPeerInvestor.PeerToPeerInvestorBuilder(InvId, budget).build();
+
             case "venture":
-                return new VentureInvestor(invId, budget);
+
+                return new VentureInvestor(InvId, budget);
+
+//                return new VentureInvestor.VentureInvestorBuilder(InvId, budget).build();
+
             case "bank investor":
-                return new BankInvestor(invId, budget);
+
+                return new BankInvestor(InvId, budget);
+
+//                return new BankInvestor.BankInvestorBuilder(InvId, budget).build();
+
             default:
                 return null;
 
         }
     }
+     
 }
 /*
  * src: https://startupnation.com/sponsored-content/types-investors-startups/

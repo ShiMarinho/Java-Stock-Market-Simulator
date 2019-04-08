@@ -28,7 +28,7 @@ public class TechFactory implements AbstractFactory {
 
 	@Override
     public Company createCompany() {
-        return new Tech(compId, share, price);
+        return new Tech.TechBuilder(compId, share, price).build();
     }
 
 }

@@ -14,10 +14,10 @@ public class FoodBeverage extends Company{
     /*
      * Constructor
      */
-    public FoodBeverage(int compId, int share, double price) {
-        this.compId = compId;
-        this.price = price;
-        this.share = share;
+    public FoodBeverage(FoodBeverageBuilder builder) {
+        this.compId = builder.compId;
+        this.price = builder.price;
+        this.share = builder.share;
 
     }
 
@@ -27,5 +27,24 @@ public class FoodBeverage extends Company{
         		"\n ID: " + compId + 
         		"\n Share: " + share + 
         		"\n Price: " + price ;
+    }
+    public static class FoodBeverageBuilder {
+
+        protected int compId;
+        protected double price;
+        protected int share;
+       
+        
+        public FoodBeverageBuilder(int compId, int share, double price){
+            this.compId = compId;
+            this.share = share;
+            this.price = price;
+          
+            
+        }
+        public FoodBeverage build(){
+            return new FoodBeverage(this);
+        }
+
     }
 }

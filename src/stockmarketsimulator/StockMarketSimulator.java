@@ -24,6 +24,7 @@ import javax.swing.DropMode;
 
 public class StockMarketSimulator extends JFrame implements ActionListener{
 
+
 	
 	public static void main(String[] args) {
 		SetUp sU = new SetUp();
