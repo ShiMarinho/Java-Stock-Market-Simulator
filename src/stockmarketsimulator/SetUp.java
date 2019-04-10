@@ -1,7 +1,10 @@
 package stockmarketsimulator;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -24,24 +27,30 @@ public class SetUp {
 	/*
 	 * Create Arraylist of companies
 	 * */
-	public ArrayList <Company> companies = new ArrayList<Company>();
+	public static ArrayList <Company> companies = new ArrayList();
 	
 	/*
 	 * Create arrayList of investors
 	 * */
-	public ArrayList<Investor> investors = new ArrayList <Investor>();
+	public static ArrayList<Investor> investors = new ArrayList();
 	
-	Random r = new Random();
-	protected final int bugetMin = 100;
-	protected final int BudgetMax = 10000;
-	protected final int objtMax = 100;
+	static Random r = new Random();
+	protected final static int bugetMin = 100;
+	protected final static int BudgetMax = 10000;
+	protected final static int objtMax = 100;
 	protected final int maxShares = 1000;
 	protected final int minShares = 500;
 	protected final int minPrice = 10;
 	protected final int maxPrice = 100;
 	
+	public void Ready() {
+		CreateInvestors();
+		CreateCompanies();
+		
+	}
+	
 
-	public void CreateInvestors() {
+	public static void CreateInvestors() {
 		 /*
 	     * Factory pattern
 	     */
@@ -51,12 +60,23 @@ public class SetUp {
 	    for(int i=0; i<objtMax; i++) {	    	
 	    	String type = types[r.nextInt(types.length)];	    	
 	    	int id = i+1;
-	    	int finalBudget = ThreadLocalRandom.current().nextInt(bugetMin, BudgetMax +1);
+	    	int finalBudget = ThreadLocalRandom.current().nextInt(bugetMin, BudgetMax +1);	    	
 	    	investors.add(Factory.createInvestor(id, finalBudget, type));	    	
-//	    	investors.add(Factory.createInvestor(id, budget, type));
+	    	
+	
 	    }	    
 	}
-    
+	
+	
+	public static void CapitalCmpany() {
+
+		Company max = companies.parallelStream()
+				.max(Comparator.comparing(c -> ((Company) c).getPrice() * ((Company) c).getShare()))
+				.get();	
+		System.out.println("----------------------------------------------------------------");
+		System.out.println(max);
+	}
+	
  	
 	public void CreateCompanies() {
 		/*
@@ -93,6 +113,7 @@ public class SetUp {
 			}catch (InputMismatchException e) {
 				System.out.println(e);
 			}
+//			System.out.println(companies);
 			
 		
 			

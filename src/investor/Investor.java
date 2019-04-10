@@ -9,7 +9,7 @@ package investor;
  *
  * @author ms
  */
-public abstract class Investor {
+public abstract class Investor{
 
 	protected int invId;
 
@@ -51,6 +51,8 @@ public abstract class Investor {
     public void setType(String type) {
         this.type = type;
     }
+    
+   
 
     @Override
     public String toString() {

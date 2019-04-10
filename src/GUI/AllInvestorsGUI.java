@@ -7,14 +7,15 @@ import javax.swing.table.DefaultTableModel;
 
 import stockmarketsimulator.SetUp;
 
-public class investorsG extends JFrame{
+public class AllInvestorsGUI extends JFrame{
+	
 	SetUp sU = new SetUp();
 	
-	public investorsG() {
-		
-		this.setTitle("View Investors");
-		setSize(1000, 1000);
-		setVisible(true);
+	public AllInvestorsGUI() {
+		setSize(600, 600);
+		setVisible(true); 
+        this.setTitle("All Investors");    
+        this.setVisible(true);
 		
 		JTable table = new JTable();                
         DefaultTableModel dtm = new DefaultTableModel();        
@@ -22,10 +23,7 @@ public class investorsG extends JFrame{
         dtm.addColumn("Budget");
         dtm.addColumn("Type");
        
-        dtm.setRowCount(sU.investors.size());
-        sU.CreateInvestors();
-        Object[] rowData = new Object[4];
-        
+        Object[] rowData = new Object[4];        
         
         for(int i=0; i<sU.investors.size(); i++) {     	
         	
@@ -36,15 +34,9 @@ public class investorsG extends JFrame{
         	dtm.addRow(rowData);
         }
         
-        table.setModel(dtm);
-        
-         
-        //add the table to the frame
+        table.setModel(dtm);       
         this.add(new JScrollPane(table));
-         
-        this.setTitle("Investors");             
-        this.pack();
-        this.setVisible(true);
+        
 	}
 
 }

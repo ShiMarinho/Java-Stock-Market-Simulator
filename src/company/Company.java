@@ -7,7 +7,7 @@ package company;
  *
  * @author ms
  */
-public abstract class Company {
+public abstract class Company{
     
     protected int compId;
     protected int share;
@@ -36,6 +36,8 @@ public abstract class Company {
     public void setPrice(double price) {
         this.price = price;
     }
+    
+  
 
     @Override
     public String toString() {
