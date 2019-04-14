@@ -10,6 +10,7 @@ package company;
  * @author ms
  */
 public class Commodity extends Company {
+	
 
 
     /*
@@ -24,7 +25,10 @@ public class Commodity extends Company {
 
     @Override
     public String toString() {
-        return "Commodity{" + "id=" + compId + ", share=" + share + ", price=" + price + '}';
+        return "\n Comodity: " + 
+        		"\n ID: " + compId + 
+        		"\n Share: " + share + 
+        		"\n Price: " + price ;
     }
     
     public static class CommodityBuilder {

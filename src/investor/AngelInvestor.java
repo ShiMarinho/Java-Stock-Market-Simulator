@@ -14,27 +14,41 @@ public class AngelInvestor extends Investor {
     /*
     * Constructor 
      */
+
+    public AngelInvestor(int invId, double bugdet) {
+    	this.invId = invId;
+         this.budget = bugdet;
+    }    
+
     public AngelInvestor(AngelInvestorBuilder builder) {
         this.invId = builder.invId;
-        this.bugdet = builder.bugdet;
+        this.budget = builder.budget;
+
 
     }
+    
 
    
     @Override
     public String toString() {
-        return "Type: Angel Investor, id: " +  getInvId() + ", Budget: " +  getBugdet();
+
+        return 
+        		"\n ID: " + getInvId( ) +
+        		"\n Budget: " +  getBudget() +
+        		"\n Type: Angel Investor ";
+
+      
 
     }
     public static class AngelInvestorBuilder {
 
         protected int invId;
-        protected double bugdet;
+        protected double budget;
        
         
         public AngelInvestorBuilder(int invId, double budget){
             this.invId = invId;
-            this.bugdet = bugdet;
+            this.budget = budget;
           
             
         }
@@ -42,5 +56,8 @@ public class AngelInvestor extends Investor {
             return new AngelInvestor(this);
         }
 
+
     }
+    
+   
 }

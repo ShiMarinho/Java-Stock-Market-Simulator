@@ -23,7 +23,10 @@ public class Tech extends Company {
 
     @Override
     public String toString() {
-        return "Tech{" + "id=" + compId + ", share=" + share + ", price=" + price + '}';
+        return "\n Tech " + 
+        		"\n ID: " + compId + 
+        		"\n Share: " + share + 
+        		"\n Price: " + price ;
     }
     
     public static class TechBuilder {

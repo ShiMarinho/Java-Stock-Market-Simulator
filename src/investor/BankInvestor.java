@@ -14,16 +14,29 @@ public class BankInvestor extends Investor {
     /*
     * Constructor 
      */
+
+    public BankInvestor(int invId, double bugdet) {
+    	this.invId = invId;
+          this.budget = bugdet;
+    }
+
     public BankInvestor(BankInvestorBuilder builder) {
         this.invId = builder.invId;
-        this.bugdet = builder.bugdet;
+        this.budget = builder.bugdet;
+
 
     }
 
    
     @Override
     public String toString() {
-        return "Type: Bank Investor, id: " +  getInvId() + ", Budget: " +  getBugdet();
+
+        return   
+        		"\n ID: " + getInvId( ) +
+        		"\n Budget: " +  getBudget() +
+        		"\n Type: Bank Investor ";
+
+
 
     }
     public static class BankInvestorBuilder {
@@ -34,7 +47,7 @@ public class BankInvestor extends Investor {
         
         public BankInvestorBuilder(int invId, double budget){
             this.invId = invId;
-            this.bugdet = bugdet;
+            this.bugdet =  budget;
           
             
         }

@@ -12,15 +12,19 @@ public class BankFactory implements AbstractFactory {
     private int compId;
     private int share;
     private double price;
+    
 
     public BankFactory(int compId, int share, double price) {
         this.compId = compId;
         this.price = price;
         this.share = share;
+        
+        
 
     }
 
-    @Override
+
+	@Override
     public Company createCompany() {
         return new Bank.BankBuilder(compId, share, price).build();
     }

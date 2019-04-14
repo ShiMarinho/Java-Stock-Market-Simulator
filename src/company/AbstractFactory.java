@@ -10,5 +10,6 @@ package company;
  * @author ms
  */
 public interface AbstractFactory {
+	
      public Company createCompany();
 }

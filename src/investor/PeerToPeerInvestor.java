@@ -14,16 +14,29 @@ public class PeerToPeerInvestor extends Investor {
     /*
     * Constructor 
      */
+
+    public PeerToPeerInvestor(int invId, double bugdet) {
+    	this.invId = invId;
+        this.budget = bugdet;
+    }
+
     public PeerToPeerInvestor(PeerToPeerInvestorBuilder builder) {
         this.invId = builder.invId;
-        this.bugdet = builder.bugdet;
+        this.budget = builder.bugdet;
+
 
     }
 
    
     @Override
     public String toString() {
-        return "Type: Peer to Peer Investor, id: " +  getInvId() + ", Budget: " +  getBugdet();
+
+        return 
+        		"\n ID: " + getInvId( ) +
+        		"\n Budget: " +  getBudget() + 
+        		"\n Type: Peer to Peer Investor ";
+
+        
 
     }
     public static class PeerToPeerInvestorBuilder {
@@ -34,13 +47,14 @@ public class PeerToPeerInvestor extends Investor {
         
         public PeerToPeerInvestorBuilder(int invId, double budget){
             this.invId = invId;
-            this.bugdet = bugdet;
+            this.bugdet = budget;
           
             
         }
         public PeerToPeerInvestor build(){
             return new PeerToPeerInvestor(this);
         }
+
 
     }
 }
