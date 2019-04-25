@@ -23,7 +23,7 @@ public class BankInvestor extends Investor {
    
     @Override
     public String toString() {
-        return "Type: Bank Investor, id: " +  getInvId() + ", Budget: " +  getBugdet();
+        return "Type: Bank Investor, id: " +  getInvId() + ", Budget: " +  getBugdet() + "\n";
 
     }
     public static class BankInvestorBuilder {

@@ -44,7 +44,7 @@ public abstract class Investor {
 
     @Override
     public String toString() {
-        return "Investor{" + "invId=" + invId + ", bugdet=" + bugdet + ", type=" + type + '}';
+        return "Investor" + "invId=" + invId + ", bugdet=" + bugdet + ", type=" + type + '\n';
     }
 
    

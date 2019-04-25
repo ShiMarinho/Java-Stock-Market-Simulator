@@ -23,7 +23,7 @@ public class PersonalInvestor extends Investor {
    
     @Override
     public String toString() {
-        return "Type: Personal Investor, id: " +  getInvId() + ", Budget: " +  getBugdet();
+        return "Type: Personal Investor, id: " +  getInvId() + ", Budget: " +  getBugdet() + "\n";
 
     }
     public static class PersonalInvestorBuilder {
