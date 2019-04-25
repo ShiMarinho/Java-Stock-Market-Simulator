@@ -6,14 +6,10 @@
 package stockmarketsimulator;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.InputMismatchException;
-import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
-
 import company.BankFactory;
 import company.CommodityFactory;
 import company.Company;
@@ -21,12 +17,8 @@ import company.CompanyFactory;
 import company.FoodBeverageFactory;
 import company.IndustrialFactory;
 import company.TechFactory;
-import investor.AngelInvestor;
-import investor.AngelInvestor.AngelInvestorBuilder;
 import investor.Factory;
 import investor.Investor;
-import investor.PersonalInvestor;
-import investor.PersonalInvestor.PersonalInvestorBuilder;
 
 public class SetUp {
 
