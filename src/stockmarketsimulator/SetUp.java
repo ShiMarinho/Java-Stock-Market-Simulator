@@ -64,13 +64,22 @@ public class SetUp {
         return investors;
     }
 
-    public static void CapitalCompany() {
+    public static void maxCapitalCompany() {
 
         Company max = companies.parallelStream()
                 .max(Comparator.comparing(c -> ((Company) c).getPrice() * ((Company) c).getShare()))
                 .get();
         System.out.println("----------------------------------------------------------------");
         System.out.println(max);
+    }
+    
+     public static void minCapitalCompany() {
+
+        Company min = companies.parallelStream()
+                .max(Comparator.comparing(c -> ((Company) c).getPrice() * ((Company) c).getShare()))
+                .get();
+        System.out.println("----------------------------------------------------------------");
+        System.out.println(min);
     }
 
     public static ArrayList<Company> CreateCompanies() {

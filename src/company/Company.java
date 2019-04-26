@@ -39,7 +39,7 @@ public abstract class Company {
 
     @Override
     public String toString() {
-        return "Company" + "id=" + compId + ", share=" + share + ", price=" + price + '\n';
+        return "Company|" +compId + ", share:" + share + ", price:" + price + '\n';
     }
     
 }

@@ -21,7 +21,7 @@ public class Bank extends Company {
 
     @Override
     public String toString() {
-        return "Bank" + "id=" + compId + ", share=" + share + ", price=" + price + '\n';
+        return "Bank|" +compId + ", share:" + share + ", price:" + price + '\n';
     }
     
     public static class BankBuilder {

@@ -52,12 +52,13 @@ public class StockMarketSimulator {
         Simulator simulator = Simulator.getInstance();
         simulator.addTrade(SetUp.getCompanies(), SetUp.getInvestors());
         simulator.getTrade(SetUp.getInvestors());
-        //System.out.println(simulator.getTrade(SetUp.getInvestors()));
+       //System.out.println(simulator.getTrade());
+        simulator.getMinCapitalCompany();
 
         Transaction tr = new Transaction(1);
 
         Simulator sim = tr.getSimulator();
-       System.out.println(sim.getTrade());
+      // System.out.println(sim.getTrade());
     }
     
 
