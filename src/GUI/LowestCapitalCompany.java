@@ -9,7 +9,7 @@ import stockmarketsimulator.SetUp;
 
 
 public class LowestCapitalCompany extends JFrame{
-	SetUp sU = new SetUp();
+
 	
 	public LowestCapitalCompany() {
 		
@@ -29,11 +29,11 @@ public class LowestCapitalCompany extends JFrame{
        
         Object[] rowData = new Object[5];
       
-		Company min = sU.companies.parallelStream()
+		Company min = SetUp.companies.parallelStream()
 				.min(Comparator.comparing(c -> ((Company) c).getPrice() * ((Company) c).getShare()))
 				.get();	
 		
-        	rowData[0] = min.getId();
+        	rowData[0] = min.getCompId();
         	rowData[1] = min.getShare();
         	rowData[2] = min.getPrice();
         	rowData[3] = min.getClass().getSimpleName();

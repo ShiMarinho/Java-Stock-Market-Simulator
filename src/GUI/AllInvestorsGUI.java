@@ -22,14 +22,16 @@ public class AllInvestorsGUI extends JFrame{
         dtm.addColumn("Investor ID");
         dtm.addColumn("Budget");
         dtm.addColumn("Type");
+        dtm.addColumn("Investments");
        
         Object[] rowData = new Object[4];        
         
-        for(int i=0; i<sU.investors.size(); i++) {     	
+        for(int i=0; i<SetUp.investors.size(); i++) {     	
         	
-        	rowData[0] = sU.investors.get(i).getInvId();
-        	rowData[1] = sU.investors.get(i).getBudget();
-        	rowData[2] = sU.investors.get(i).getClass().getSimpleName();
+        	rowData[0] = SetUp.investors.get(i).getInvId();
+        	rowData[1] = SetUp.investors.get(i).getBudget();
+        	rowData[2] = SetUp.investors.get(i).getClass().getSimpleName();
+        	rowData[3] = SetUp.investors.get(i).getTotalSharesBought();
         	
         	dtm.addRow(rowData);
         }

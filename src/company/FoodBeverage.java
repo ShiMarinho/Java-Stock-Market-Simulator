@@ -23,11 +23,14 @@ public class FoodBeverage extends Company{
 
     @Override
     public String toString() {
+
         return "\n Food and Beverage " + 
         		"\n ID: " + compId + 
         		"\n Share: " + share + 
-        		"\n Price: " + price ;
+        		"\n Price: " + price +
+        		"\n Number of Shares sold: " + sharesSold;
     }
+    
     public static class FoodBeverageBuilder {
 
         protected int compId;

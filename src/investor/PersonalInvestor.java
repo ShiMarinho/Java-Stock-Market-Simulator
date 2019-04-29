@@ -31,12 +31,12 @@ public class PersonalInvestor extends Investor {
     @Override
     public String toString() {
 
+
         return 
         		"\n ID: " + getInvId( ) +
             	"\n Budget: " +  getBudget() +
-            	"\n Type: Personal Investor";
-
-       
+            	"\n Type: Personal Investor" +
+            	"\n Total of bought Shares: " + totalSharesBought;
 
     }
     public static class PersonalInvestorBuilder {

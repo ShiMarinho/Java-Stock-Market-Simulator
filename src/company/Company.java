@@ -12,14 +12,8 @@ public abstract class Company{
     protected int compId;
     protected int share;
     protected double price;
+    protected int sharesSold;
 
-    public int getId() {
-        return compId;
-    }
-
-    public void setId(int id) {
-        this.compId = id;
-    }
 
     public int getShare() {
         return share;
@@ -36,12 +30,26 @@ public abstract class Company{
     public void setPrice(double price) {
         this.price = price;
     }
-    
-  
 
-    @Override
+    public int getCompId() {
+		return compId;
+	}
+
+	public void setCompId(int compId) {
+		this.compId = compId;
+	}
+
+	public int getSharesSold() {
+		return sharesSold;
+	}
+
+	public void setSharesSold(int sharesSold) {
+		this.sharesSold = sharesSold;
+	}
+
+	@Override
     public String toString() {
-        return "Company{" + "id=" + compId + ", share=" + share + ", price=" + price + '}';
+        return "Company|" +compId + ", share:" + share + ", price:" + price + sharesSold +'\n';
     }
     
 }

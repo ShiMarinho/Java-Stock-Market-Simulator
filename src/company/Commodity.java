@@ -25,10 +25,14 @@ public class Commodity extends Company {
 
     @Override
     public String toString() {
+
         return "\n Comodity: " + 
         		"\n ID: " + compId + 
         		"\n Share: " + share + 
-        		"\n Price: " + price ;
+        		"\n Price: " + price + 
+        		"\n Number of Shares sold: " + sharesSold;
+
+
     }
     
     public static class CommodityBuilder {

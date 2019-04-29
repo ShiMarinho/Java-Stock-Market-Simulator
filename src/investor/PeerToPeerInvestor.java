@@ -31,12 +31,12 @@ public class PeerToPeerInvestor extends Investor {
     @Override
     public String toString() {
 
+
         return 
         		"\n ID: " + getInvId( ) +
         		"\n Budget: " +  getBudget() + 
-        		"\n Type: Peer to Peer Investor ";
-
-        
+        		"\n Type: Peer to Peer Investor " +
+        		"\n Total of bought Shares: " + totalSharesBought;
 
     }
     public static class PeerToPeerInvestorBuilder {

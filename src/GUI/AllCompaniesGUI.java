@@ -12,9 +12,6 @@ import stockmarketsimulator.SetUp;
 
 public class AllCompaniesGUI extends JFrame{
 	
-	SetUp sU = new SetUp();
-	
-	
 	public AllCompaniesGUI() {
 		setSize(600, 600);
 		setVisible(true); 
@@ -28,16 +25,18 @@ public class AllCompaniesGUI extends JFrame{
         dtm.addColumn("Price");
         dtm.addColumn("Type");
         dtm.addColumn("Capital Total");
+        dtm.addColumn("Shares sold");
        
-        Object[] rowData = new Object[5];  
+        Object[] rowData = new Object[6];  
 
-        for(int i=0; i<sU.companies.size(); i++) {     	
+        for(int i=0; i<SetUp.companies.size(); i++) {     	
         	
-        	rowData[0] = sU.companies.get(i).getId();
-        	rowData[1] = sU.companies.get(i).getShare();
-        	rowData[2] = sU.companies.get(i).getPrice();
-        	rowData[3] = sU.companies.get(i).getClass().getSimpleName();
-        	rowData[4] = sU.companies.get(i).getPrice() * sU.companies.get(i).getShare();
+        	rowData[0] = SetUp.companies.get(i).getCompId();
+        	rowData[1] = SetUp.companies.get(i).getShare();
+        	rowData[2] = SetUp.companies.get(i).getPrice();
+        	rowData[3] = SetUp.companies.get(i).getClass().getSimpleName();
+        	rowData[4] = SetUp.companies.get(i).getPrice() * SetUp.companies.get(i).getShare();
+        	rowData[5] = SetUp.companies.get(i).getSharesSold();
         	
         	dtm.addRow(rowData);
         }

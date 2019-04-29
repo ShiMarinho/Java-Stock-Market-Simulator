@@ -23,10 +23,15 @@ public class Industrial extends Company {
 
     @Override
     public String toString() {
+
         return "\n Industrial " + 
         		"\n ID: " + compId + 
         		"\n Share: " + share + 
-        		"\n Price: " + price ;
+        		"\n Price: " + price +
+        		"\n Number of Shares sold: " + sharesSold;
+
+    
+
     }
     
     public static class IndustrialBuilder {

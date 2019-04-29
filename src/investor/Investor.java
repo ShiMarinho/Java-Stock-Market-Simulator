@@ -19,6 +19,7 @@ public abstract class Investor{
     
     protected double budget;
     protected String type;
+    protected int totalSharesBought;
 
 
     public double getBudget() {
@@ -54,12 +55,21 @@ public abstract class Investor{
     
    
 
-    @Override
+    public int getTotalSharesBought() {
+		return totalSharesBought;
+	}
+
+	public void setTotalSharesBought(int numbOfTransactions) {
+		this.totalSharesBought = numbOfTransactions;
+	}
+
+	@Override
     public String toString() {
+
         return "\n Investor"        		
         		+ " \n Bugdet: " + budget 
         		+ "\n Type: " + type ;
-    }
+   }
 
    
 

@@ -113,6 +113,14 @@ public class MainGUI extends JFrame implements ActionListener{
 		leastInvests.addActionListener(this);
 		leastInvests.setActionCommand("leastInvests");
 		
+		JMenu transactions = new JMenu("Transactions");
+		transactions.setFont(new Font("Tsukushi A Round Gothic", Font.PLAIN, 14));
+		mb.add(transactions);
+		JMenuItem allT = new JMenuItem("All Transactions");
+		transactions.add(allT);
+		allT.addActionListener(this);
+		allT.setActionCommand("allTrasactions");
+		
 		JMenu file = new JMenu("Exit");
 		file.setFont(new Font("Tsukushi A Round Gothic", Font.PLAIN, 14));
 		mb.add(file);
@@ -120,6 +128,11 @@ public class MainGUI extends JFrame implements ActionListener{
 		file.add(exit);
 		exit.addActionListener(this);
 		exit.setActionCommand("ext");
+		
+		
+		
+		
+		
 		
 		this.setJMenuBar(mb);
 		
@@ -149,15 +162,21 @@ public class MainGUI extends JFrame implements ActionListener{
 			
 		}
 		else if (e.getActionCommand().equals("highestShares")) {
+			HighestSharesInvestor hsi = new HighestSharesInvestor();
 			
 		}
 		else if (e.getActionCommand().equals("lowestShares")) {
+			LowestSharesInvestor lsi = new LowestSharesInvestor();
 			
 		}
 		else if (e.getActionCommand().equals("mostInvests")) {
+			HighestInvestmentsCompany inv = new HighestInvestmentsCompany();
 			
 		}
 		else if (e.getActionCommand().equals("leastInvests")) {
+			
+		} else if(e.getActionCommand().equals("allTrasactions")){
+			AllTransactions at = new AllTransactions();
 			
 		}
 		else if(e.getActionCommand().equals("ext")) {

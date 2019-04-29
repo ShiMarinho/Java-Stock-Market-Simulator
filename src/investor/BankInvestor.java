@@ -31,10 +31,12 @@ public class BankInvestor extends Investor {
     @Override
     public String toString() {
 
+
         return   
         		"\n ID: " + getInvId( ) +
         		"\n Budget: " +  getBudget() +
-        		"\n Type: Bank Investor ";
+        		"\n Type: Bank Investor " +
+        		"\n Total of bought Shares: " + totalSharesBought;
 
 
 
