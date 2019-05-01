@@ -14,7 +14,6 @@ public class Transaction {
     private int id;
     private Simulator simulator;
 
-    
     public Transaction(int id) {
         this.id = id;
         this.simulator = Simulator.getInstance();
@@ -24,12 +23,15 @@ public class Transaction {
         return id;
 
     }
-   
- 
-	public Simulator getSimulator() {
+
+    public Simulator getSimulator() {
         return simulator;
+    }
+
+    @Override
+    public String toString() {
+        return "Transaction{" + "id=" + id + ", simulator=" + simulator + '}';
     }
     
     
-
 }

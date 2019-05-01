@@ -6,12 +6,13 @@ public class StockMarketSimulator {
 	
 	
 	public static void main(String[] args) {
-		MainGUI mG = new MainGUI();
+		new MainGUI();
 		new StockMarketSimulator();
 		SetUp sU = new SetUp();
 		sU.Ready();
 		TradingDay td= new TradingDay();
 		td.Buy();
+               
 		
 		
 		
