@@ -14,47 +14,36 @@ public class PersonalInvestor extends Investor {
     /*
     * Constructor 
      */
-
-    public PersonalInvestor(int invId, double bugdet) {
-    	this.invId = invId;
-        this.budget = bugdet;
-    }
-
     public PersonalInvestor(PersonalInvestorBuilder builder) {
         this.invId = builder.invId;
         this.budget = builder.bugdet;
 
-
     }
 
-   
     @Override
     public String toString() {
 
-
-        return 
-        		"\n ID: " + getInvId( ) +
-            	"\n Budget: " +  getBudget() +
-            	"\n Type: Personal Investor" +
-            	"\n Total of bought Shares: " + totalSharesBought;
+        return "\n ID: " + getInvId()
+                + "\n Budget: " + getBudget()
+                + "\n Type: Personal Investor"
+                + "\n Total of bought Shares: " + totalSharesBought;
 
     }
+
     public static class PersonalInvestorBuilder {
 
         protected int invId;
         protected double bugdet;
-       
-        
-        public PersonalInvestorBuilder(int invId, double budget){
+
+        public PersonalInvestorBuilder(int invId, double budget) {
             this.invId = invId;
             this.bugdet = budget;
-          
-            
-        }
-        public PersonalInvestor build(){
-            return new PersonalInvestor(this);
+
         }
 
+        public PersonalInvestor build() {
+            return new PersonalInvestor(this);
+        }
 
     }
 }

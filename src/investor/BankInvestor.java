@@ -15,11 +15,7 @@ public class BankInvestor extends Investor {
     * Constructor 
      */
 
-    public BankInvestor(int invId, double bugdet) {
-    	this.invId = invId;
-          this.budget = bugdet;
-    }
-
+  
     public BankInvestor(BankInvestorBuilder builder) {
         this.invId = builder.invId;
         this.budget = builder.bugdet;
