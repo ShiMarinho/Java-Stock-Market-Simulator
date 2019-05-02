@@ -1,4 +1,4 @@
-package GUI;
+package gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -81,7 +81,7 @@ public class MainGUI extends JFrame implements ActionListener {
         invByShares.setFont(new Font("Tsukushi A Round Gothic", Font.PLAIN, 14));
         investors.add(invByShares);
 
-        JMenuItem highestShares = new JMenuItem("Highes Number of Shares");
+        JMenuItem highestShares = new JMenuItem("Highest Number of Shares");
         highestShares.setFont(new Font("Tsukushi A Round Gothic", Font.PLAIN, 14));
         invByShares.add(highestShares);
         highestShares.addActionListener(this);
@@ -127,8 +127,6 @@ public class MainGUI extends JFrame implements ActionListener {
 
         this.setJMenuBar(mb);
 
-        validate();
-        repaint();
 
     }
 
