@@ -5,11 +5,14 @@
  */
 package company;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  *
  * @author ms
  */
 public class Tech extends Company {
+	
     
     /*
      * Constructor
@@ -18,6 +21,7 @@ public class Tech extends Company {
         this.compId = builder.compId;
         this.price = builder.price;
         this.share = builder.share;
+        
 
     }
 

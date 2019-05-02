@@ -3,6 +3,8 @@
  */
 package company;
 
+import stockmarketsimulator.SetUp;
+
 /**
  *
  * @author ms
@@ -13,6 +15,8 @@ public abstract class Company{
     protected int share;
     protected double price;
     protected int sharesSold;
+    
+    
 
 
     public int getShare() {
@@ -46,6 +50,8 @@ public abstract class Company{
 	public void setSharesSold(int sharesSold) {
 		this.sharesSold = sharesSold;
 	}
+	
+	
 
 	@Override
     public String toString() {

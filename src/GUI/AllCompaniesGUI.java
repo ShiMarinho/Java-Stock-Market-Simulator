@@ -1,5 +1,6 @@
 package GUI;
 import java.awt.EventQueue;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -11,6 +12,7 @@ import stockmarketsimulator.SetUp;
 
 
 public class AllCompaniesGUI extends JFrame{
+	DecimalFormat df = new DecimalFormat("#.##");
 	
 	public AllCompaniesGUI() {
 		setSize(600, 600);
@@ -33,9 +35,9 @@ public class AllCompaniesGUI extends JFrame{
         	
         	rowData[0] = SetUp.companies.get(i).getCompId();
         	rowData[1] = SetUp.companies.get(i).getShare();
-        	rowData[2] = SetUp.companies.get(i).getPrice();
+        	rowData[2] = df.format(SetUp.companies.get(i).getPrice());
         	rowData[3] = SetUp.companies.get(i).getClass().getSimpleName();
-        	rowData[4] = SetUp.companies.get(i).getPrice() * SetUp.companies.get(i).getShare();
+        	rowData[4] = df.format(SetUp.companies.get(i).getPrice() * SetUp.companies.get(i).getShare());
         	rowData[5] = SetUp.companies.get(i).getSharesSold();
         	
         	dtm.addRow(rowData);

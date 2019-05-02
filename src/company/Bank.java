@@ -3,6 +3,8 @@
  */
 package company;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  *
  * @author ms
@@ -19,12 +21,14 @@ public class Bank extends Company {
         this.share = share;
         this.price = price;
         
+        
     }
 
     public Bank(BankBuilder builder) {
         this.compId = builder.compId;
         this.price = builder.price;
         this.share = builder.share;
+        
 
 
     }
@@ -48,12 +52,14 @@ public class Bank extends Company {
         protected int compId;
         protected double price;
         protected int share;
+        
        
         
         public BankBuilder(int compId, int share, double price){
             this.compId = compId;
             this.share = share;
             this.price = price;
+            
           
             
         }

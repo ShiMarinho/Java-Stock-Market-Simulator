@@ -12,16 +12,16 @@ import company.Company;
 import investor.Investor;
 
 public class TradingDay {
-	  protected final static int shareNo = 1;
+	 protected final static int shareNo = 1;
 	
     static Random r = new Random();
+    protected static int count = 11;
     
     
     public static ArrayList<Object> transactions = new ArrayList<Object>();
     Simulator simulator = Simulator.getInstance();
     
   
-	
 	public void Buy() {		
 		for(int i=0; i< SetUp.companies.size(); i++) {
 			for(int j=0; j<SetUp.investors.size(); j++) {				
@@ -33,9 +33,15 @@ public class TradingDay {
 						inv.setBudget(inv.getBudget() - com.getPrice());
 						inv.setTotalSharesBought(inv.getTotalSharesBought() +1);	
 						com.setSharesSold(com.getSharesSold() + shareNo);
-						com.setShare(com.getShare() - shareNo);	
-						simulator.addTrade(com, inv);								
-//						System.out.println(simulator.getTrade());
+						com.setShare(com.getShare() - shareNo);						
+						if(com.getSharesSold()%count == 0) {
+							com.setPrice(com.getPrice() + (com.getPrice() * .02));
+							
+						} 
+						
+						simulator.addTrade(com, inv);	
+						
+
 						
 					}
 					

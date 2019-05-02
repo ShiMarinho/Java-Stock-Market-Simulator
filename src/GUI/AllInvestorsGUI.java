@@ -1,5 +1,7 @@
 package GUI;
 
+import java.text.DecimalFormat;
+
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -8,6 +10,7 @@ import javax.swing.table.DefaultTableModel;
 import stockmarketsimulator.SetUp;
 
 public class AllInvestorsGUI extends JFrame{
+	DecimalFormat df = new DecimalFormat("#.##");
 	
 	SetUp sU = new SetUp();
 	
@@ -29,7 +32,7 @@ public class AllInvestorsGUI extends JFrame{
         for(int i=0; i<SetUp.investors.size(); i++) {     	
         	
         	rowData[0] = SetUp.investors.get(i).getInvId();
-        	rowData[1] = SetUp.investors.get(i).getBudget();
+        	rowData[1] =df.format(SetUp.investors.get(i).getBudget());
         	rowData[2] = SetUp.investors.get(i).getClass().getSimpleName();
         	rowData[3] = SetUp.investors.get(i).getTotalSharesBought();
         	

@@ -4,13 +4,11 @@
  * and open the template in the editor.
  */
 package stockmarketsimulator;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import company.Company;
+
 
 /**
  *
@@ -20,8 +18,9 @@ public class Simulator {
 
     //Hashmap to save the investor + company
     private Map<Object, Object> simulator;
+    protected  int transactions = 0;
     
-    static private Simulator instance = new Simulator();
+    static private Simulator instance = null;
     
     // Constructor
     private Simulator() {
@@ -31,9 +30,9 @@ public class Simulator {
     }
     
     // Add trade
-    public void addTrade(Object company, Object investor) {
-        
+    public void addTrade(Object company, Object investor) {        
         simulator.put(company, investor);
+        transactions++;
 
     }
 
@@ -43,10 +42,7 @@ public class Simulator {
         return simulator.get(investor);
        
     }
-    
-    public Object getCompany(Object company) {
-    	return simulator.get(company);
-    }
+  
 
     // Check transaction 
     public String getTrade() {
@@ -54,6 +50,7 @@ public class Simulator {
 
         for (Entry entry : simulator.entrySet()) {
         	trade += entry.getKey() + 
+        	
             "\n" + entry.getValue() + "\n"
             +"\n ---------------------------------------";
         	
@@ -62,9 +59,17 @@ public class Simulator {
         return trade;
     }
     
-  
-    public static Simulator getInstance() {
-        return instance;
+    public int getTotalTrades() {
+    	return transactions;
+    }
+    
+ 
+    public static synchronized Simulator getInstance() {
+    	if(instance == null) {
+			instance = new Simulator();
+			
+		}
+		return instance;
     }
 
 }

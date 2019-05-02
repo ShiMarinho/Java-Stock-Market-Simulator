@@ -120,6 +120,10 @@ public class MainGUI extends JFrame implements ActionListener{
 		transactions.add(allT);
 		allT.addActionListener(this);
 		allT.setActionCommand("allTrasactions");
+		JMenuItem totalT = new JMenuItem("Total Transactions");
+		transactions.add(totalT);
+		totalT.addActionListener(this);
+		totalT.setActionCommand("total transactions");
 		
 		JMenu file = new JMenu("Exit");
 		file.setFont(new Font("Tsukushi A Round Gothic", Font.PLAIN, 14));
@@ -177,6 +181,9 @@ public class MainGUI extends JFrame implements ActionListener{
 			
 		} else if(e.getActionCommand().equals("allTrasactions")){
 			AllTransactions at = new AllTransactions();
+			
+		}else if(e.getActionCommand().equals("total transactions")){
+			TotalTransactions tt = new TotalTransactions();
 			
 		}
 		else if(e.getActionCommand().equals("ext")) {

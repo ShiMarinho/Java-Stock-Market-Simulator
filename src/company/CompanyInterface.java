@@ -11,12 +11,14 @@ package company;
  */
 public interface CompanyInterface {
     
-    public void getShares(int companyID, int share);
-    public void increasePrice();
-    public void reducePrice();
-     public double sumCapital();
-    public Company highestCapital();
-    public Company lowestCapital();
+//    public void getShares(int companyID, int share);
+//    public void increasePrice();
+//    public void reducePrice();
+//     public double sumCapital();
+//    public Company highestCapital();
+//    public Company lowestCapital();
+	
+	public void sellShares();
     
     
     
