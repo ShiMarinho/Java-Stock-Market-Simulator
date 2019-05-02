@@ -29,7 +29,9 @@ public class TradingDay {
                         com.setSharesSold(com.getSharesSold() + shareNo);
                         com.setShare(com.getShare() - shareNo);
                         simulator.addTrade(com, inv);
-						//System.out.println(simulator.getTrade());
+                        simulator.countShares(com);
+                    
+                        System.out.println(simulator.getTrade());
 
                     }
 

@@ -5,7 +5,6 @@
  */
 package stockmarketsimulator;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;

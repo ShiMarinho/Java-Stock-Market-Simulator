@@ -5,11 +5,10 @@
  */
 package stockmarketsimulator;
 
+import company.Company;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-
-import company.Company;
 
 /**
  *
@@ -18,9 +17,9 @@ import company.Company;
 public class Simulator {
 
     //Hashmap to save the investor + company
-    private Map<Object, Object> simulator;
+    private static Map<Object, Object> simulator;
 
-    static private Simulator instance = new Simulator();
+    private static Simulator instance = new Simulator();
 
     // Constructor
     private Simulator() {
@@ -37,35 +36,46 @@ public class Simulator {
     }
 
     // Check transaction 
-    public Object getInvestor(Object investor) {
-
-        return simulator.get(investor);
-
-    }
-
-    public Object getCompany(Object company) {
-        return simulator.get(company);
-    }
-
-    // Check transaction 
     public String getTrade() {
         String trade = "";
 
         for (Entry entry : simulator.entrySet()) {
             trade += entry.getKey()
-                    + "\n" + entry.getValue() + "\n"
+                    + "\n" + entry.getValue() + " \n"
                     + "\n ---------------------------------------";
 
         }
         return trade;
     }
 
-    public void countTransaction(){
-        //if any 10 shares are sold from company a company tha hasn't sold any has its price reduced to half
+    public void countShares(Company company) {
+        int sold = company.getSharesSold();
+
+        for (int i = 0; i == 100; i++) {
+            if ((sold % 10) == 0) {
+                company.setPrice(company.getPrice() + (company.getPrice() * 0.02));
+                System.out.println(company.getCompId());
+                System.out.println(company.getPrice());
+            }
+        }
+
+    }
+
+    public void countTrade(Company company) {
+        int size = simulator.size();
+
+        for (int i = 0; i == 100; i++) {
+            if (size % 10 == 0) {
+                company.setPrice(company.getPrice() - (company.getPrice() * 0.5));
+                System.out.println(simulator.size());
+                System.out.println(company.getPrice());
+            }
+        }
+
     }
 
     public static Simulator getInstance() {
+
         return instance;
     }
-
 }

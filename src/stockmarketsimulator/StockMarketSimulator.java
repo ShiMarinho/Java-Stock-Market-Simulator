@@ -18,14 +18,12 @@ public class StockMarketSimulator {
                 new MainGUI();
             }
         });
-        
+
         SetUp sU = new SetUp();
         sU.Ready();
         TradingDay td = new TradingDay();
         td.Buy();
 
     }
-    
-
 
 }
