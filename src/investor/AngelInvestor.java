@@ -14,8 +14,6 @@ public class AngelInvestor extends Investor {
     /*
     * Constructor 
      */
-   
-
     public AngelInvestor(AngelInvestorBuilder builder) {
         this.invId = builder.invId;
         this.budget = builder.budget;

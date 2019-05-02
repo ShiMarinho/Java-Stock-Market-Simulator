@@ -45,10 +45,7 @@ public abstract class Company {
     public void setSharesSold(int sharesSold) {
         this.sharesSold = sharesSold;
     }
-    public void sellShare(){
-       // create an array of 10 Companies and a counter to keep track of 10 share solds
-       // if 10 share are sold increase 2% in the price of the company and start count again
-    }
+
     @Override
     public String toString() {
         return "Company|" + compId + ", share:" + share + ", price:" + price + sharesSold + '\n';
