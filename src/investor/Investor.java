@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Generic investor class. It is an abstract class for creating Investors.
+ * It has the investor's attributes, getters, setters and the toString methods
  */
 package investor;
 

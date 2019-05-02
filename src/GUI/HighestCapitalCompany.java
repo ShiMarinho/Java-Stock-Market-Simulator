@@ -1,4 +1,4 @@
-package GUI;
+package gui;
 
 import java.util.Comparator;
 import javax.swing.JFrame;

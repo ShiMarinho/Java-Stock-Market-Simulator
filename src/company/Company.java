@@ -1,5 +1,6 @@
 /*
- * Generic company class.
+ * Generic company class. It is an abstract class for creating Companies.
+ * It has the company's attributes, getters, setters and the toString methods
  */
 package company;
 
@@ -46,9 +47,6 @@ public abstract class Company {
         this.sharesSold = sharesSold;
     }
 
-    @Override
-    public String toString() {
-        return "Company|" + compId + ", share:" + share + ", price:" + price + sharesSold + '\n';
-    }
+   
 
 }

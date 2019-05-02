@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Simulator is a singleton class which guarantee a single instance of Simulator
+ * class to keep track of all trade made by investor and companies
  */
 package stockmarketsimulator;
 

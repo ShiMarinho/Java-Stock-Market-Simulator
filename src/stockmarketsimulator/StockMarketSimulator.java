@@ -1,6 +1,6 @@
 package stockmarketsimulator;
 
-import GUI.MainGUI;
+import gui.MainGUI;
 import javax.swing.SwingUtilities;
 
 public class StockMarketSimulator {
