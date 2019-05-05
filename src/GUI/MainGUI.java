@@ -1,4 +1,10 @@
+/*
+ * MAIN GUI  that displays all the information of investors, companies and transactions from the trading day 
+ * Composed only for Menu bar & menu items where user can select the option to be seen, and to exit the application
+ *
+ */
 package GUI;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
@@ -6,17 +12,13 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-import GUI.HighestCapitalCompany;
-import GUI.LowestCapitalCompany;
-import GUI.AllCompaniesGUI;
-import GUI.AllInvestorsGUI;
-import stockmarketsimulator.SetUp;
 
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JTextPane;
+
 
 public class MainGUI extends JFrame implements ActionListener{
 	
@@ -41,11 +43,12 @@ public class MainGUI extends JFrame implements ActionListener{
 		setSize(600, 600);
 		setVisible(true);
 		this.setTitle("Stock Simulator");
+		this.setLocationRelativeTo(null);
 		
 		JMenuBar mb = new JMenuBar();		
 		mb.setFont(new Font("Hannotate TC", Font.PLAIN, 14));
 		mb.setBackground(new Color(95, 158, 160));
-		JMenu companies = new JMenu("Companies");
+		JMenu companies = new JMenu("Company");
 		companies.setBackground(Color.DARK_GRAY);
 		companies.setFont(new Font("Tsukushi A Round Gothic", Font.PLAIN, 14));
 		mb.add(companies);
@@ -72,7 +75,7 @@ public class MainGUI extends JFrame implements ActionListener{
 		lowestCapital.addActionListener(this);
 		lowestCapital.setActionCommand("lowestCapital");
 		
-		JMenu investors = new JMenu("Investors");
+		JMenu investors = new JMenu("Investor");
 		investors.setFont(new Font("Tsukushi A Round Gothic", Font.PLAIN, 14));
 		mb.add(investors);
 		JMenuItem allInv = new JMenuItem("All Investors");
@@ -113,14 +116,14 @@ public class MainGUI extends JFrame implements ActionListener{
 		leastInvests.addActionListener(this);
 		leastInvests.setActionCommand("leastInvests");
 		
-		JMenu transactions = new JMenu("Transactions");
+		JMenu transactions = new JMenu("Transaction");
 		transactions.setFont(new Font("Tsukushi A Round Gothic", Font.PLAIN, 14));
 		mb.add(transactions);
-		JMenuItem allT = new JMenuItem("All Transactions");
+		JMenuItem allT = new JMenuItem("All Transaction");
 		transactions.add(allT);
 		allT.addActionListener(this);
 		allT.setActionCommand("allTrasactions");
-		JMenuItem totalT = new JMenuItem("Total Transactions");
+		JMenuItem totalT = new JMenuItem("Total Transaction");
 		transactions.add(totalT);
 		totalT.addActionListener(this);
 		totalT.setActionCommand("total transactions");
@@ -132,11 +135,6 @@ public class MainGUI extends JFrame implements ActionListener{
 		file.add(exit);
 		exit.addActionListener(this);
 		exit.setActionCommand("ext");
-		
-		
-		
-		
-		
 		
 		this.setJMenuBar(mb);
 		
@@ -158,26 +156,27 @@ public class MainGUI extends JFrame implements ActionListener{
 			
 		}
 		else if (e.getActionCommand().equals("highestCapital")) {
-			HighestCapitalCompany hc = new HighestCapitalCompany();
+			CompanyHighestCapital hc = new CompanyHighestCapital();
 			
 		}
 		else if (e.getActionCommand().equals("lowestCapital")) {
-			LowestCapitalCompany lcp = new LowestCapitalCompany();
+			CompanyLowestCapital lcp = new CompanyLowestCapital();
 			
 		}
 		else if (e.getActionCommand().equals("highestShares")) {
-			HighestSharesInvestor hsi = new HighestSharesInvestor();
+			InvestorHIghestShares hsi = new InvestorHIghestShares();
 			
 		}
 		else if (e.getActionCommand().equals("lowestShares")) {
-			LowestSharesInvestor lsi = new LowestSharesInvestor();
+			InvestorLowestShares lsi = new InvestorLowestShares();
 			
 		}
 		else if (e.getActionCommand().equals("mostInvests")) {
-			HighestInvestmentsCompany inv = new HighestInvestmentsCompany();
+			InvestorMostInvestements inv = new InvestorMostInvestements();
 			
 		}
 		else if (e.getActionCommand().equals("leastInvests")) {
+			InvestorLeastInvestements inv = new InvestorLeastInvestements();
 			
 		} else if(e.getActionCommand().equals("allTrasactions")){
 			AllTransactions at = new AllTransactions();
@@ -185,6 +184,8 @@ public class MainGUI extends JFrame implements ActionListener{
 		}else if(e.getActionCommand().equals("total transactions")){
 			TotalTransactions tt = new TotalTransactions();
 			
+		}else if(e.getActionCommand().equals("total transactions")){
+			TotalTransactions tt = new TotalTransactions();
 		}
 		else if(e.getActionCommand().equals("ext")) {
 			int confirmed = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit?","EXIT",JOptionPane.YES_NO_OPTION);
@@ -192,8 +193,6 @@ public class MainGUI extends JFrame implements ActionListener{
 	        	System.exit(0);
 	        }
 		}
-
-
-	}
+	}	
 
 }

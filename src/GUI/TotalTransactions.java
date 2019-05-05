@@ -1,3 +1,8 @@
+/*
+ * GUI class the display the total amount of transactions performed during the trading day
+ *
+ */
+
 package GUI;
 import java.awt.EventQueue;
 import java.util.ArrayList;
@@ -20,10 +25,11 @@ public class TotalTransactions extends JFrame{
 	Simulator simulator = Simulator.getInstance();
 	
 	public TotalTransactions() {
-		setSize(600, 600);
+		setSize(200, 200);
 		setVisible(true); 
-        this.setTitle("All Transactions");    
+        this.setTitle("All Transaction");    
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
         
         JTable table = new JTable();                
         DefaultTableModel dtm = new DefaultTableModel();        
@@ -31,10 +37,14 @@ public class TotalTransactions extends JFrame{
        
        
         Object[] rowData = new Object[1];
-    
-        	rowData[0] = simulator.getTotalTrades();
+    	
+        /**
+    	 *getTotalTrades() method from the Simulator is called, which returns the siz of the hashmaps
+    	 * as the total amount of transactions performed during the trading day
+    	 * */    
+       	rowData[0] = simulator.getTotalTrades();
        	
-        	dtm.addRow(rowData);
+       	dtm.addRow(rowData);
         
         
         table.setModel(dtm);

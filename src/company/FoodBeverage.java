@@ -5,6 +5,7 @@
  */
 package company;
 
+import java.text.DecimalFormat;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -12,6 +13,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author ms
  */
 public class FoodBeverage extends Company{
+	DecimalFormat df = new DecimalFormat("#.##"); 
 	
     
     /*
@@ -29,10 +31,10 @@ public class FoodBeverage extends Company{
     @Override
     public String toString() {
 
-        return "\n Food and Beverage " + 
+        return "\n COMPANY:  " + "\n Food and Beverage " + 
         		"\n ID: " + compId + 
         		"\n Share: " + share + 
-        		"\n Price: " + price +
+        		"\n Price: " + df.format(price) +
         		"\n Number of Shares sold: " + sharesSold;
     }
     

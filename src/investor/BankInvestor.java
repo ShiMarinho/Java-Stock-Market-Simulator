@@ -5,21 +5,20 @@
  */
 package investor;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author ms
  */
 public class BankInvestor extends Investor {
+	DecimalFormat df = new DecimalFormat("#.##"); 
 
     /*
     * Constructor 
      */
 
-    public BankInvestor(int invId, double bugdet) {
-    	this.invId = invId;
-          this.budget = bugdet;
-    }
-
+  
     public BankInvestor(BankInvestorBuilder builder) {
         this.invId = builder.invId;
         this.budget = builder.bugdet;
@@ -33,8 +32,8 @@ public class BankInvestor extends Investor {
 
 
         return   
-        		"\n ID: " + getInvId( ) +
-        		"\n Budget: " +  getBudget() +
+        		"\n INVESTOR:" + "\n Investor ID: " + getInvId( ) +
+        		"\n Budget: " +  df.format(getBudget()) +
         		"\n Type: Bank Investor " +
         		"\n Total of bought Shares: " + totalSharesBought;
 

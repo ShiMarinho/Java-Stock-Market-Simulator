@@ -9,15 +9,14 @@ import stockmarketsimulator.SetUp;
  *
  * @author ms
  */
-public abstract class Company{
-    
+public abstract class Company {
+
     protected int compId;
     protected int share;
     protected double price;
     protected int sharesSold;
     
     
-
 
     public int getShare() {
         return share;
@@ -36,6 +35,7 @@ public abstract class Company{
     }
 
     public int getCompId() {
+
 		return compId;
 	}
 
@@ -53,9 +53,4 @@ public abstract class Company{
 	
 	
 
-	@Override
-    public String toString() {
-        return "Company|" +compId + ", share:" + share + ", price:" + price + sharesSold +'\n';
-    }
-    
 }

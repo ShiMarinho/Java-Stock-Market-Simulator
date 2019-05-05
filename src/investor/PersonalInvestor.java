@@ -5,56 +5,48 @@
  */
 package investor;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author ms
  */
 public class PersonalInvestor extends Investor {
 
+	DecimalFormat df = new DecimalFormat("#.##"); 
     /*
     * Constructor 
      */
-
-    public PersonalInvestor(int invId, double bugdet) {
-    	this.invId = invId;
-        this.budget = bugdet;
-    }
-
     public PersonalInvestor(PersonalInvestorBuilder builder) {
         this.invId = builder.invId;
         this.budget = builder.bugdet;
 
-
     }
 
-   
     @Override
     public String toString() {
 
-
-        return 
-        		"\n ID: " + getInvId( ) +
-            	"\n Budget: " +  getBudget() +
-            	"\n Type: Personal Investor" +
-            	"\n Total of bought Shares: " + totalSharesBought;
+        return "\n INVESTOR:" + "\n Investor ID: " + getInvId()
+                + "\n Budget: " + df.format(getBudget())
+                + "\n Type: Personal Investor"
+                + "\n Total of bought Shares: " + totalSharesBought;
 
     }
+
     public static class PersonalInvestorBuilder {
 
         protected int invId;
         protected double bugdet;
-       
-        
-        public PersonalInvestorBuilder(int invId, double budget){
+
+        public PersonalInvestorBuilder(int invId, double budget) {
             this.invId = invId;
             this.bugdet = budget;
-          
-            
-        }
-        public PersonalInvestor build(){
-            return new PersonalInvestor(this);
+
         }
 
+        public PersonalInvestor build() {
+            return new PersonalInvestor(this);
+        }
 
     }
 }

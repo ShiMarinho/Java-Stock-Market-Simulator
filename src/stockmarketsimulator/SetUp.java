@@ -1,11 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * SetUp class where an arrayList of investors and arrayList of companies are created, each one of them 
+ * with a total of 100 objects
+ * 
  */
 package stockmarketsimulator;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
@@ -32,14 +31,25 @@ public class SetUp {
     public static ArrayList<Investor> investors = new ArrayList();
 
     static Random r = new Random();
+    /*Minimum limit budget */
     protected final static int bugetMin = 100;
+    /*Maximum limit budget*/
     protected final static int BudgetMax = 10000;
+    /*Maximum number of objects to be created */
     protected final static int objtMax = 100;
+    /*Maximum limit of shares for Investor */
     protected final static int maxShares = 1000;
+    /*Minimum limit of shares for Investor */
     protected final static int minShares = 500;
+    /*Minimum limit of price for Company */
     protected final static int minPrice = 10;
+    /*Maximum limit of price for Company */
     protected final static int maxPrice = 100;
 
+    /*
+     * Method that will be called from the main class to 
+     * generate the Investors / Companies
+     * */
     public void Ready() {
     	CreateInvestors();
     	CreateCompanies();
@@ -50,12 +60,15 @@ public class SetUp {
 	     * Factory pattern
          */
 
+    	/*Array of company types */
         String[] types = new String[]{"personal", "angel", "peer-to-peer", "venture", "bank investor"};
 
+        /*For loop that will create 100 companies */
         for (int i = 0; i < objtMax; i++) {
-            String type = types[r.nextInt(types.length)];
-            int id = i + 1;
-            int finalBudget = ThreadLocalRandom.current().nextInt(bugetMin, BudgetMax + 1);
+            String type = types[r.nextInt(types.length)]; // selects a random type from the String type array
+            int id = i + 1;  
+            /*creates the investor budget with a random number between bugetMin & BudgetMax*/
+            int finalBudget = ThreadLocalRandom.current().nextInt(bugetMin, BudgetMax + 1); 
             investors.add(Factory.createInvestor(id, finalBudget, type));
 
         }
@@ -69,8 +82,9 @@ public class SetUp {
          */
 
         for (int i = 0; i < objtMax; i++) {
-
+        	/*creates the company share with a random number between minShares & maxShares*/
             int shares = ThreadLocalRandom.current().nextInt(minShares, maxShares + 1);
+            /*creates the company price with a random number between minPrice & maxPrice*/
             int price = ThreadLocalRandom.current().nextInt(minPrice, maxPrice + 1);
             int id = i + 1;
             final int choice = 1 + r.nextInt(5);
@@ -103,7 +117,7 @@ public class SetUp {
             } catch (InputMismatchException e) {
                 System.out.println(e);
             }
-//			System.out.println(companies);
+
 
         }
         return companies;
